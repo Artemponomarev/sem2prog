@@ -11,7 +11,7 @@
 int* AllocateMemory(int n);
 void DisplayArray(int* a, int n);
 void EnterArray(int* a, int n);
-bool IsEven(int*a);
+bool IsEven(int a);
 void Swap(int& a, int& b);
 void Swap(int *a, int *b);
 int  ConvertAndCount(int numderconverte);
@@ -77,7 +77,7 @@ void DeleteElement1(int *a, int *p, int n, int& size)
 {
     for (int i = 0; i < n - 1; i++)
     {
-        if ((a[i + 1] < 0) && (a[i] > 0) && (IsEven(a)))
+        if ((a[i + 1] < 0) && (a[i] > 0) && (IsEven(a[i])))
         {
             p[size] = a[i + 1];
             size++;
@@ -89,9 +89,9 @@ void DeleteElement1(int *a, int *p, int n, int& size)
 
 
 
-bool IsEven(int*a)
+bool IsEven(int a)
 {
-    if (*a % 2 == 0)
+    if (a % 2 == 0)
         return true;
     else
         return false;
